@@ -6,7 +6,7 @@ print('\nend of for loop - list')
 '''
 Output:
 20 10 2 4 6
-end of for loop - listffsdfsdds
+end of for loop - listf
 '''
 
 # iterating over a tuple using for loop
