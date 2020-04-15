@@ -1,0 +1,105 @@
+#  git version
+git --version
+'''
+Output:
+git version 2.26.0.windows.1
+'''
+
+# setting username
+git config --global user.name "kbhat1234"
+git config user.name
+'''
+Output:
+kbhat1234
+'''
+
+# setting user email id
+git config --global user.email "karthikbhat@live.com"
+git config user.email
+'''
+Output:
+karthikbhat@live.com
+'''
+
+# avoid merge commits for pull
+git config --global branch.autosetuprebase always
+git config branch.autosetuprebase
+'''
+Output:
+always
+'''
+
+# color highlighting
+git config --global color.ui true
+git config --global color.status auto
+git config --global color.branch auto
+
+git config color.ui
+'''
+Output:
+true
+'''
+
+git config color.status
+'''
+Output:
+auto
+'''
+
+git config color.branch
+'''
+Output:
+auto
+'''
+
+# Setting default editor
+git config --global core.editor vim
+git config core.editor
+'''
+Output:
+vim
+'''
+
+# setting default merge tool
+git config --global merge.tool vimdiff
+git config merge.tool
+'''
+Output:
+vimdiff
+'''
+
+# listing git config settings
+git config --list
+'''
+Output:
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+core.editor=nano.exe
+credential.helper=manager
+user.name=kbhat1234
+user.email=karthikbhat@live.com
+color.ui=true
+color.status=auto
+color.branch=auto
+core.editor=vim
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=https://github.com/kbhat1234/python_3.8.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.local.remote=origin
+branch.local.merge=refs/heads/local
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+'''
