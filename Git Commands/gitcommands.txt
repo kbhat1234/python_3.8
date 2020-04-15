@@ -154,7 +154,6 @@ origin  https://github.com/kbhat1234/python_3.8.git (fetch)
 origin  https://github.com/kbhat1234/python_3.8.git (push)
 '''
 
-# git clone
 # git clone [url]
 git clone git https://github.com/kbhat1234/RESTAPI.git
 '''
@@ -165,4 +164,78 @@ remote: Total 479 (delta 0), reused 0 (delta 0), pack-reused 479
 Receiving objects: 100% (479/479), 77.35 KiB | 286.00 KiB/s, done.
 Resolving deltas: 100% (194/194), done.
 '''
+
+vi a1.txt # modify some contents to the already synced file
+touch a2.txt # add a new file on the local working directory
+
+# status to know which branch, which files are modified, new, deleted, etc.
+git status
+'''
+Output:
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   a1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+'''
+
+# to know code branches on your local working directory
+git branch
+'''
+Output:
+  local1.0
+* master
+'''
+
+# create a new branch with name
+# git branch [branch_name]
+git branch version2.0
+
+git branch
+'''
+Output:
+  local1.0
+* master
+  version2.0
+'''
+
+# switching between one branch of version of code to another
+# git checkout [branch_name]
+git checkout version2.0
+'''
+Output:
+Switched to branch 'version2.0'
+M       a1.txt  # M followed with file name a1.txt is modified, already synced with git repo before
+'''
+
+# before deleting the branch version2.0
+git branch
+'''
+Output:
+  master
+* version2.0
+'''
+
+# delete the created branch from local
+# git branch -D [branch_name]
+git branch -D version2.0
+'''
+Output:
+Deleted branch version2.0 (was 0ffd94f).
+'''
+
+# after delete of branch
+git branch
+'''
+Output:
+* master
+'''
+
+
 
