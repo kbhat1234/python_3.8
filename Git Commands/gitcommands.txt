@@ -103,3 +103,66 @@ branch.local.merge=refs/heads/local
 branch.master.remote=origin
 branch.master.merge=refs/heads/master
 '''
+
+# git initialization
+git init
+'''
+Output:
+Reinitialized existing Git repository in C:/Users/karth/PycharmProjects/PythonPackage/Programs/.git/
+'''
+
+# link the local repository to an empty GitHub repository
+# git remote add origin [url]
+git remote add origin https://github.com/kbhat1234/python_3.8.git
+git config remote.origin.url
+'''
+Output:
+remote.origin.url=https://github.com/kbhat1234/python_3.8.git
+'''
+git config remote.origin.fetch
+'''
+Output:
++refs/heads/*:refs/remotes/origin/*
+'''
+
+# link the local repository to an empty GitHub repository
+git remote add destination https://github.com/kbhat1234/shell-script.git
+git config remote.destination.url
+git config remote.destination.fetch
+'''
+Output:
+https://github.com/kbhat1234/shell-script.git
++refs/heads/*:refs/remotes/destination/*
+'''
+
+# view the current remotes
+git remote -v
+'''
+Output:
+destination     https://github.com/kbhat1234/shell-script.git (fetch)
+destination     https://github.com/kbhat1234/shell-script.git (push)
+origin  https://github.com/kbhat1234/python_3.8.git (fetch)
+origin  https://github.com/kbhat1234/python_3.8.git (push)
+''''
+
+# Remove remote
+git remote rm destination
+git remote -v
+'''
+Output:
+origin  https://github.com/kbhat1234/python_3.8.git (fetch)
+origin  https://github.com/kbhat1234/python_3.8.git (push)
+'''
+
+# git clone
+# git clone [url]
+git clone git https://github.com/kbhat1234/RESTAPI.git
+'''
+Output:
+Cloning into 'RESTAPI'...
+remote: Enumerating objects: 479, done.
+remote: Total 479 (delta 0), reused 0 (delta 0), pack-reused 479
+Receiving objects: 100% (479/479), 77.35 KiB | 286.00 KiB/s, done.
+Resolving deltas: 100% (194/194), done.
+'''
+
