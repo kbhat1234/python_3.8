@@ -104,6 +104,43 @@ branch.master.remote=origin
 branch.master.merge=refs/heads/master
 '''
 
+# removing an entry from global config for variable defined in config
+git config --global --unset core.excludesfile
+git config --list
+'''
+Output:
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+core.editor=nano.exe
+credential.helper=manager
+user.name=kbhat1234
+user.email=karthikbhat@live.com
+color.ui=true
+color.status=auto
+color.branch=auto
+core.editor=vim
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=https://github.com/kbhat1234/python_3.8.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.local.remote=origin
+branch.local.merge=refs/heads/local
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+'''
+
 # git initialization
 git init
 '''
@@ -298,3 +335,127 @@ Fast-forward
  Git Commands/gitcommands.txt | 57 ++++++++++++++++++++++++++++++++++++++++++--
  1 file changed, 55 insertions(+), 2 deletions(-)
 '''
+
+# lists version history of the current branch - local/master
+git log
+'''
+Output:
+commit 66c45478a4610b79a57f18c4a564fc2bc7898db0 (HEAD -> local, origin/local)
+Author: kbhat1234 <karthikbhat@live.com>
+Date:   Thu Apr 16 09:41:44 2020 +0530
+
+    merge commands
+
+commit d0ad4143844a6ccc968d0d7eb1c867dfddff3d55
+Author: kbhat1234 <karthikbhat@live.com>
+Date:   Thu Apr 16 09:40:32 2020 +0530
+
+    add
+'''
+
+# lists version history for a file, including renames
+# git log --follow [file]
+git log --follow gitcommands.txt
+'''
+Output:
+commit 66c45478a4610b79a57f18c4a564fc2bc7898db0 (HEAD -> local, origin/local)
+Author: kbhat1234 <karthikbhat@live.com>
+Date:   Thu Apr 16 09:41:44 2020 +0530
+
+    merge commands
+
+commit d0ad4143844a6ccc968d0d7eb1c867dfddff3d55
+Author: kbhat1234 <karthikbhat@live.com>
+Date:   Thu Apr 16 09:40:32 2020 +0530
+
+    add
+
+commit 9ca0636275551f68978d355e9ba9b0dd1705c466
+Author: kbhat1234 <karthikbhat@live.com>
+Date:   Thu Apr 16 09:31:36 2020 +0530
+
+    merge commands
+'''
+
+# git diff [1st-branch] [2nd-branch] difference betweeen 2 branches
+git diff local master
+'''
+Output:
+diff --git a/.gitignore b/.gitignore
+deleted file mode 100644
+index 314f02b..0000000
+--- a/.gitignore
++++ /dev/null
+@@ -1 +0,0 @@
+-*.txt
+\ No newline at end of file
+diff --git a/Git Commands/gitcommands.txt b/Git Commands/gitcommands.txt
+index a663fa5..7492273 100644
+--- a/Git Commands/gitcommands.txt
++++ b/Git Commands/gitcommands.txt
+@@ -297,4 +297,7 @@ Updating 5e527e1..4d2076a
+ Fast-forward
+  Git Commands/gitcommands.txt | 57 ++++++++++++++++++++++++++++++++++++++++++--
+  1 file changed, 55 insertions(+), 2 deletions(-)
+-'''
+\ No newline at end of file
++'''
++
++
++
+'''
+
+# outputs metadata and content changes of the specified commit
+# git show [commit]
+#git show 4d2076a89ada77797e5875c9f1
+'''
+Output:
+commit 4d2076a89ada77797e5875c9f1e48a7cd2f2c040
+Author: kbhat1234 <karthikbhat@live.com>
+Date:   Thu Apr 16 08:40:25 2020 +0530
+
+    add
+
+diff --git a/Git Commands/gitcommands.txt b/Git Commands/gitcommands.txt
+index cb51965..a1cfde8 100644
+--- a/Git Commands/gitcommands.txt
++++ b/Git Commands/gitcommands.txt
+@@ -285,10 +285,8 @@ To https://github.com/kbhat1234/python_3.8.git
+ git checkout master
+ '''
+ Output:
+-error: Your local changes to the following files would be overwritten by checkout:
+-        Git Commands/gitcommands.txt
+-Please commit your changes or stash them before you switch branches.
+-Aborting
++Switched to branch 'master'
++Your branch is up to date with 'origin/master'.
+ '''
+
+ git merge master local
+'''
+
+# Snapshots the file in preparation for versioning
+# git add [file]
+# git add .
+git add abc1.txt
+git status
+'''
+Output:
+On branch local
+Your branch is up to date with 'origin/local'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Git Commands/gitcommands.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Git Commands/gitcommands.txt
+'''
+
+# Records file snapshots permanently in version history
+# git commit -a -m "[add descriptive commit message]"
+git commit -a -m "add files"
+
