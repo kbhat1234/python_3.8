@@ -236,7 +236,37 @@ git branch
 Output:
 * master
 '''
-# merging 2 branches
-# git merge [branch1] [branch2]
+
+'''merging 2 branches locally and pushing to remote repositories
+git merge [branch1] [branch2]
+checkout to local repository branch "local"
+make some changes to gitcommands.txt
+commit the changes to local
+then push to remote repository branch "origin/local"
+checkout to master, merge with local and then push to "origin/master"
+'''
+
+git status
+'''
+Output:
+On branch local
+Your branch is up to date with 'origin/local'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   gitcommands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+'''
+
+git commit -a -m "adding some more commands to gitcommands.txt"
+git push origin local
+'''
+changes pushed to remote repository origin/local
+'''
+git checkout master
+git merge master local
+
 
 
