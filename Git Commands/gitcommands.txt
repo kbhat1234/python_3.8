@@ -236,6 +236,7 @@ git branch
 Output:
 * master
 '''
-
+# merging 2 branches
+# git merge [branch1] [branch2]
 
 
