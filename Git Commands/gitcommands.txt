@@ -458,4 +458,10 @@ Changes not staged for commit:
 # Records file snapshots permanently in version history
 # git commit -a -m "[add descriptive commit message]"
 git commit -a -m "add files"
+'''
+Output:
+[local 85461d0] add
+ 1 file changed, 162 insertions(+), 1 deletion(-)
+'''
+
 
