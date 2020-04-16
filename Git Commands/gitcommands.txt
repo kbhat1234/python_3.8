@@ -464,4 +464,31 @@ Output:
  1 file changed, 162 insertions(+), 1 deletion(-)
 '''
 
+# synchronize changes - fetch, merge, push, pull
+# fetch/download all the history of the remote tracking branch
+# git fetch [url]
+# git fetch origin
+git fetch https://github.com/kbhat1234/python_3.8.git
+'''
+Output:
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 676 bytes | 5.00 KiB/s, done.
+From https://github.com/kbhat1234/python_3.8
+   cd71d28..2cddd67  master     -> origin/master
+---------------------------------------------------------------------
+From https://github.com/kbhat1234/python_3.8
+ * branch            HEAD       -> FETCH_HEAD
+'''
 
+# merging 2 or more remotely tracking branch
+# checkout to local branch using git checkout [branchname]
+git checkout local
+# modify the file gitcommands.txt with adding some more lines of code
+# after modify add/commit the changes
+git commit -a -m "commit the changes"
+
+
+# push the changes from local repository branch to remote repository local branch
