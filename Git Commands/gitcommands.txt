@@ -526,3 +526,8 @@ To https://github.com/kbhat1234/python_3.8.git
    2cddd67..e0b0141  local -> local
 '''
 
+# updates your current local branch with the updated code if there is any delta changes
+# git pull origin [branch_name]
+git pull origin master
+git pull origin local
+
