@@ -261,11 +261,36 @@ no changes added to commit (use "git add" and/or "git commit -a")
 '''
 
 git commit -a -m "adding some more commands to gitcommands.txt"
+'''
+Output:
+[local dad0fdf] modifying gitcommands.txt
+ 1 file changed, 32 insertions(+), 2 deletions(-)
+'''
+
+# changes pushed to remote repository origin/local
 git push origin local
 '''
-changes pushed to remote repository origin/local
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 641 bytes | 641.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/kbhat1234/python_3.8.git
+   5e527e1..dad0fdf  local -> local
+
 '''
+
 git checkout master
+'''
+Output:
+error: Your local changes to the following files would be overwritten by checkout:
+        Git Commands/gitcommands.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+'''
+
 git merge master local
 
 
