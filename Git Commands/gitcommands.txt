@@ -489,6 +489,40 @@ git checkout local
 # modify the file gitcommands.txt with adding some more lines of code
 # after modify add/commit the changes
 git commit -a -m "commit the changes"
-
+# git merge [branch_1] [branch_2]
+# merge master with changes on local
+git merge master local
+'''
+Output:
+Updating 2cddd67..e0b0141
+Fast-forward
+ Git Commands/gitcommands.txt | 29 ++++++++++++++++++++++++++++-
+ 1 file changed, 28 insertions(+), 1 deletion(-)
+'''
 
 # push the changes from local repository branch to remote repository local branch
+# git push origin [branchname]
+# as we we merged master with local, now push the merged code from master to remote tracking branch master
+git push origin master
+'''
+Output:
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 822 bytes | 822.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/kbhat1234/python_3.8.git
+   2cddd67..e0b0141  master -> master
+'''
+
+# now push the local code as well to remote branch local
+git push origin local
+'''
+Output:
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kbhat1234/python_3.8.git
+   2cddd67..e0b0141  local -> local
+'''
+
