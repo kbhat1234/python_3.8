@@ -288,8 +288,16 @@ Output:
 Switched to branch 'master'
 Your branch is up to date with 'origin/master'.
 '''
+# merge master branch with local updated branch
 
 git merge master local
+'''
+Output:
+Updating 5e527e1..4d2076a
+Fast-forward
+ Git Commands/gitcommands.txt | 57 ++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 55 insertions(+), 2 deletions(-)
+'''
 
 
 
