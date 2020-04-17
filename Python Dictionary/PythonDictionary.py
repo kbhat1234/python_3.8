@@ -103,9 +103,11 @@ Output:
 
 dic5 = {'fname': 'karthik', 'lname': 'bhat', 'age': 41, 'empid': 'ajppb4129b'}
 print("fname is %s" % dic5['fname'])
+print(type(dic5['age']))
 '''
 Output:
 fname is karthik
+<class 'int'>
 '''
 print("fname is %s" % dic5['fname'], ", lname is %s" % dic5['lname'], ", age is %d" % dic5['age'], ", empid is %s" % dic5['empid'])
 '''
