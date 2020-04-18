@@ -1,5 +1,9 @@
 dic1 = {}
 print(f'dic1 is {dic1}')
+'''
+Output:
+dic1 is {}
+'''
 dic1['name'] = input('enter name ')
 dic1['age'] = int(input('enter age '))
 dic1['gender'] = input('enter gender ')
