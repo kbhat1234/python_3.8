@@ -63,10 +63,57 @@ dic2['salary'] = float(input('enter salary '))
 dic2['company'] = input('enter company ')
 
 print(f'after adding elements in dic2 is {dic2}')
+'''
+Output:
+enter name karthik
+enter age 41
+enter sex Male
+enter salary 23433.78
+enter company onmobile
+after adding elements in dic2 is {'name': 'karthik', 'age': 41, 'sex': 'Male, 'salary': 23433.78, 'company': 'onmobile'}
+'''
 print(f'dic2 keys is {dic2.keys()}')
+'''
+Output:
+dic2 keys is dict_keys(['name', 'age', 'sex', 'salary', 'company'])
+'''
 print(f'dic2 values is {dic2.values()}')
+'''
+Output:
+dic2 values is dict_values(['karthik', 41, 'Male', 23433.78, 'onmobile'])
+'''
 print(f'length of dic2 is {len(dic2)}')
+'''
+Output:
+length of dic2 is 5
+'''
 print(f'length of dic2 keys is {len(dic2.keys())}')
+'''
+Output:
+length of dic2 keys is 5
+'''
 print(f'length of dic2 values is {len(dic2.values())}')
+'''
+Output:
+length of dic2 values is 5
+'''
 print(f'dic2 items is {dic2.items()}')
+'''
+Output:
+dic2 items is dict_items([('name', 'karthik'), ('age', 41), ('sex', 'Male'), ('salary', 23433.78), ('company', 'onmobile')])
+'''
 print(f'length of dic2 items is {len(dic2.items())}')
+'''
+Output:
+length of dic2 items is 5
+'''
+
+dic2['name'] = input('enter name ')
+dic2['age'] = int(input('enter age '))
+print(f'dic2 after update is {dic2}')
+'''
+Output:
+enter name ishani
+enter age 10
+dic2 after update is {'name': 'ashish', 'age': 40, 'sex':'Male', 'salary': 23433.78, 'company': 'onmobile'}
+'''
