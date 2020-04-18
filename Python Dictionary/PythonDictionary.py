@@ -23,6 +23,7 @@ Output:
 dic1 values is dict_values(['litchi'])
 '''
 print(f'type(dic1) is {type(dic1)}')
+print(f'length of dic1 is {len(dic1)}')
 print('------------------------------------------------------------------------------------------------')
 
 # duplicate keys in different order defined
@@ -192,17 +193,52 @@ for i in employee.items():
     print(i)
 print('end of program')
 
-# 2. properties of dictionary - key cannot be list
+'''
+2. properties of dictionary - key cannot be list
 dic1 = {'name': 'karthik', 'empid': 232323, [100, 200, 300]: 'cse'}
 print(dic1)
 
 for x, y in dic1.items():
     print(x, y)
 print('end of program')
-'''
+
 Output:
 Traceback (most recent call last):
   File "C:/Users/karth/PycharmProjects/PythonPackage/Programs/Python Dictionary/PythonDictionary.py", line 196, in <module>
     dic1 = {'name': 'karthik', 'empid': 232323, [100, 200, 300]: 'cse'}
 TypeError: unhashable type: 'list'
+'''
+
+print(type(employee))
+'''
+Output: <class 'dict'>
+'''
+print(employee)
+print(type(employee['name']))
+print(type(employee['salary']))
+'''
+Output:
+{'name': 'ishani', 'age': 41, 'salary': 25000.00, 'company': 'GOOGLE'}
+<class 'str'>
+<class 'float'>
+'''
+s = str(employee)
+print(s)
+'''
+Output:
+{'name': 'ishani', 'age': 41, 'salary': 25000.00, 'company': 'GOOGLE'}
+'''
+print(type(s))
+print(type(s[0]))
+print(type(s[1]))
+print(type(s[2]))
+print(type(s[3]))
+'''
+Output:
+{'name': 'ishani', 'age': 41, 'salary': 25000.0, 'company': 'GOOGLE'}
+<class 'str'>
+<class 'str'>
+<class 'str'>
+<class 'str'>
+<class 'str'>
 '''
