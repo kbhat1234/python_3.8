@@ -109,7 +109,8 @@ Output:
 fname is karthik
 <class 'int'>
 '''
-print("fname is %s" % dic5['fname'], ", lname is %s" % dic5['lname'], ", age is %d" % dic5['age'], ", empid is %s" % dic5['empid'])
+print("fname is %s" % dic5['fname'], ", lname is %s" % dic5['lname'], ", age is %d" % dic5['age'],
+      ", empid is %s" % dic5['empid'])
 '''
 Output:
 name is karthik , lname is bhat , age is 41 , empid is ajppb4129b
@@ -175,4 +176,33 @@ print(f"name: {d1.get('name')}, age: {d1.get('age')}, salary: {d1.get('salary')}
 '''
 Output:
 name: karthik, age: 41, salary: 250000, company: onmobile
+'''
+
+# 1. properties of dictionary - same key defined multiple times for holding multiple values
+employee = {'name': 'karthik', 'age': 41, 'salary': 25000.00, 'company': 'GOOGLE', 'name': 'ishani'}
+print(f'employee dictionary is {employee}')
+
+# using items() method
+for x, y in employee.items():
+    print(x, y)
+print('end of program')
+
+# using items() method
+for i in employee.items():
+    print(i)
+print('end of program')
+
+# 2. properties of dictionary - key cannot be list
+dic1 = {'name': 'karthik', 'empid': 232323, [100, 200, 300]: 'cse'}
+print(dic1)
+
+for x, y in dic1.items():
+    print(x, y)
+print('end of program')
+'''
+Output:
+Traceback (most recent call last):
+  File "C:/Users/karth/PycharmProjects/PythonPackage/Programs/Python Dictionary/PythonDictionary.py", line 196, in <module>
+    dic1 = {'name': 'karthik', 'empid': 232323, [100, 200, 300]: 'cse'}
+TypeError: unhashable type: 'list'
 '''

@@ -570,3 +570,11 @@ Output:
         remote = origin
         merge = refs/heads/master
 '''
+
+# when local and master branches have different versions of HEAD pointer
+cat .git/refs/heads/local .git/refs/heads/master
+'''
+Output:
+bfcff0d44c236928ead064d236e734ff55ea4269
+662ba40a30e2bf4950893785a99ff0fac200260e
+'''
