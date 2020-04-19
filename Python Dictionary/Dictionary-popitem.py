@@ -12,3 +12,7 @@ Output:
 removed element is (5, 'banana')
 '''
 print(f'd1 after deleting is {d1}')
+'''
+Output:
+d1 after deleting is {1: 'apple', 2: 'orange', 3: 'grapes', 4: 'mango'}
+'''
