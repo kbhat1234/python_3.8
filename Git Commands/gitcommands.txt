@@ -230,6 +230,14 @@ Output:
 * master
 '''
 
+# to know the remote branches
+git branch --remotes
+'''
+Output:
+  origin/local
+  origin/master
+'''
+
 # create a new branch with name
 # git branch [branch_name]
 git branch version2.0
