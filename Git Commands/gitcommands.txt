@@ -230,6 +230,15 @@ Output:
 * master
 '''
 
+git branch -r
+'''
+Output:
+ origin/HEAD -> origin/master
+  origin/local
+  origin/master
+  origin/version2.0
+'''
+
 # to know the remote branches
 git branch --remotes
 '''
@@ -462,6 +471,11 @@ Changes not staged for commit:
   (use "git restore <file>..." to discard changes in working directory)
         modified:   Git Commands/gitcommands.txt
 '''
+git status -s
+'''
+Output:
+?? a2.txt
+'''
 
 # Records file snapshots permanently in version history
 # git commit -a -m "[add descriptive commit message]"
@@ -586,3 +600,9 @@ Output:
 bfcff0d44c236928ead064d236e734ff55ea4269
 662ba40a30e2bf4950893785a99ff0fac200260e
 '''
+
+dfgffsdgkldfjkjg
+dfkgjdfkjgkdfjkjgdf
+dfkjklfdj
+dfgdfkjkdfjgkj
+kjjk
