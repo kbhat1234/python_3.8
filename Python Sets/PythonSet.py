@@ -45,10 +45,22 @@ vowels = {'a', 'i', 'u'}
 tup = ('e', 'o')
 print(f'vowels set is {vowels}')
 print(f'tuple is {tup}')
+'''
+Output:
+vowels set is {'i', 'u', 'a'}
+tuple is ('e', 'o')
+'''
 vowels.add(tup)
 print(f'adding tuple to set is {vowels}')
-
+'''
+Output:
+adding tuple to set is {'i', 'u', 'a', ('e', 'o')}
+'''
 # adding again same tuple
 vowels.add(tup)  # it will not add again the tup to set
 print(f'adding again tuple to set is {vowels}')
+'''
+Output:
+adding again tuple to set is {'i', 'u', 'a', ('e', 'o')}
+'''
 
