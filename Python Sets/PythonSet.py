@@ -38,16 +38,17 @@ june, september, october, january, may, march, febrauary, april, july, december,
 end of loop
 '''
 
-set2 = set([])
-print(set2)
-set2.add('karthik')
-set2.update(['rini', 'ishani', 'kaustubh'])  # list
-print(set2)
-set2.clear()
-print(set2)
-set2.update({'karthik', 'rini', 'ishani'})  # set
-print(set2)
-set2.update({1: 'rini', 2: 'kaustubh'})  # dictionary
-print(set2)
-set2.update('mouse')  # string
-print(set2)
+# adding tuple to set
+# set of vowels
+vowels = {'a', 'i', 'u'}
+# tuple of ('e', 'o')
+tup = ('e', 'o')
+print(f'vowels set is {vowels}')
+print(f'tuple is {tup}')
+vowels.add(tup)
+print(f'adding tuple to set is {vowels}')
+
+# adding again same tuple
+vowels.add(tup)  # it will not add again the tup to set
+print(f'adding again tuple to set is {vowels}')
+
