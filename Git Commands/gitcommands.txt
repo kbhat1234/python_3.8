@@ -630,8 +630,37 @@ git reset --hard 03bd858
 
 # git reset --hard origin/master
 
-# stash 
-=======
+# git stash  - temporary space to store partial changes and later commit the same.
+git stash
+'''
+Output:
+Saved working directory and index state WIP on local: 03bd858 conflict fix
+'''
+
+# to view the list of all changed files in stack
+git stash list
+'''
+Output:
+stash@{0}: WIP on local: 03bd858 conflict fix
+stash@{1}: WIP on local: 9469583 add
+'''
+
+# to pop file stack in stash area
+git stash pop
+'''
+Output:
+On branch local
+Your branch is up to date with 'origin/local'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Git Commands/gitcommands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (e16f1c89e3f5e00bb75fcc063e157abc7a5c09ec)
+'''
+
 # will give the HEAD positions on various changes with crisp info
 git reflog
 '''
@@ -650,11 +679,3 @@ git reflog
 753403e HEAD@{12}: checkout: moving from local to master
 '''
 
-# reset the commit and point HEAD to previous version of commit
-# git reset --hard <commit>
-# git reset --hard origin/master
-git log
-git reflog
-git reset --hard 231e16f
-
->>>>>>> Stashed changes
