@@ -601,6 +601,7 @@ bfcff0d44c236928ead064d236e734ff55ea4269
 662ba40a30e2bf4950893785a99ff0fac200260e
 '''
 
+<<<<<<< Updated upstream
 # reference logs of all commits
 git reflog
 '''
@@ -630,3 +631,30 @@ git reset --hard 03bd858
 # git reset --hard origin/master
 
 # stash 
+=======
+# will give the HEAD positions on various changes with crisp info
+git reflog
+'''
+9469583 (HEAD -> local, origin/master, origin/local, master) HEAD@{0}: checkout: moving from master to local
+9469583 (HEAD -> local, origin/master, origin/local, master) HEAD@{1}: merge local: Fast-forward
+5c0c664 HEAD@{2}: checkout: moving from local to master
+9469583 (HEAD -> local, origin/master, origin/local, master) HEAD@{3}: commit: add
+79f40c9 HEAD@{4}: commit: add
+552e2f3 HEAD@{5}: commit: update
+5c0c664 HEAD@{6}: checkout: moving from master to local
+5c0c664 HEAD@{7}: merge local: Fast-forward
+231e16f HEAD@{8}: checkout: moving from local to master
+5c0c664 HEAD@{9}: commit: changed the code by adding and removing some code
+231e16f HEAD@{10}: checkout: moving from master to local
+231e16f HEAD@{11}: merge local: Fast-forward
+753403e HEAD@{12}: checkout: moving from local to master
+'''
+
+# reset the commit and point HEAD to previous version of commit
+# git reset --hard <commit>
+# git reset --hard origin/master
+git log
+git reflog
+git reset --hard 231e16f
+
+>>>>>>> Stashed changes
