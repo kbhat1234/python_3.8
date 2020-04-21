@@ -41,7 +41,13 @@ end of loop
 set2 = set([])
 print(set2)
 set2.add('karthik')
-set2.update(['rini', 'ishani', 'kaustubh'])
+set2.update(['rini', 'ishani', 'kaustubh'])  # list
 print(set2)
 set2.clear()
+print(set2)
+set2.update({'karthik', 'rini', 'ishani'})  # set
+print(set2)
+set2.update({1: 'rini', 2: 'kaustubh'})  # dictionary
+print(set2)
+set2.update('mouse')  # string
 print(set2)
