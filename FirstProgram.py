@@ -12,7 +12,7 @@ sample1 = 'O-----'
 sample2 = ' ||||'
 print(sample1)
 print(sample2)
-print('*' * 10)
+print('*' * 40)
 
 print('Welcome to python Start')
 print(8 * '\n')
