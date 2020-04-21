@@ -601,3 +601,32 @@ bfcff0d44c236928ead064d236e734ff55ea4269
 662ba40a30e2bf4950893785a99ff0fac200260e
 '''
 
+# reference logs of all commits
+git reflog
+'''
+Output:
+03bd858 (HEAD -> local, origin/local) HEAD@{0}: commit (merge): conflict fix
+db54e5d HEAD@{1}: commit: changed the values
+9469583 (origin/master, master) HEAD@{2}: reset: moving to HEAD
+9469583 (origin/master, master) HEAD@{3}: reset: moving to HEAD
+9469583 (origin/master, master) HEAD@{4}: checkout: moving from master to local
+9469583 (origin/master, master) HEAD@{5}: merge local: Fast-forward
+5c0c664 HEAD@{6}: checkout: moving from local to master
+9469583 (origin/master, master) HEAD@{7}: commit: add
+79f40c9 HEAD@{8}: commit: add
+552e2f3 HEAD@{9}: commit: update
+5c0c664 HEAD@{10}: checkout: moving from master to local
+5c0c664 HEAD@{11}: merge local: Fast-forward
+231e16f HEAD@{12}: checkout: moving from local to master
+5c0c664 HEAD@{13}: commit: changed the code by adding and removing some code
+231e16f HEAD@{14}: checkout: moving from master to local
+231e16f HEAD@{15}: merge local: Fast-forward
+'''
+
+# reset/revert the commits done
+# git reset --hard <commit>
+git reset --hard 03bd858
+
+# git reset --hard origin/master
+
+# stash 
