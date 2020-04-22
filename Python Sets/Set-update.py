@@ -9,7 +9,7 @@ original set items is {'fname', 'bhat', 'lname', 'karthik', 23.76, 2334}
 type(set1) is <class 'set'>
 length of set1 is 6
 '''
-# adding items to set
+# adding items to set using update() method
 set1.update({2, 'rini', 34, 'kaustubh', 'karthik'})
 print(f'set1 after update is {set1}')
 print(f'length of set1 after update is {len(set1)}')
