@@ -25,7 +25,7 @@ KeyError: 'pop from an empty set'
 '''
 
 del set1  # using del keyword we can delete the set1
-#print(set1)  # NameError is seen as the object set1 is not defined
+# print(set1)  # NameError is seen as the object set1 is not defined
 '''
 Output:
 Traceback (most recent call last):
