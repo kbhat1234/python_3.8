@@ -23,3 +23,29 @@ print(f'"(a2.issuperset(a1))" is {a2.issuperset(a1)}')
 Output:
 "(a2.issuperset(a1))" is False
 '''
+
+A = {1, 2, 3}
+B = {1, 2, 3, 4, 5}
+C = {1, 2, 4, 5}
+
+print(A.issuperset(B))
+print(B.issuperset(A))
+'''
+Output:
+False
+True
+'''
+print(A.issuperset(C))
+print(C.issuperset(A))
+'''
+Output:
+False
+True
+'''
+print(B.issuperset(C))
+print(C.issuperset(B))
+'''
+Output:
+True
+False
+'''

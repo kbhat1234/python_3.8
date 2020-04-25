@@ -23,3 +23,29 @@ print(f'"(a2.issubset(a1))" is {a2.issubset(a1)}')
 Output:
 "(a2.issubset(a1))" is True
 '''
+
+A = {1, 2, 3}
+B = {1, 2, 3, 4, 5}
+C = {1, 2, 4, 5}
+
+print(A.issubset(B))
+print(B.issubset(A))
+'''
+Output:
+True
+False
+'''
+print(A.issubset(C))
+print(C.issubset(A))
+'''
+Output:
+False
+False
+'''
+print(B.issubset(C))
+print(C.issubset(B))
+'''
+Output:
+False
+True
+'''

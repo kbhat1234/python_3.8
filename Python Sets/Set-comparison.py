@@ -19,8 +19,8 @@ print(f'days1 is superset of days2 is {s1}')
 Output:
 days1 is superset of days2 is True
 '''
-s2 = days2 > days1  # days2 is superset of days1
-print(f'days2 is superset of days1 is {s2}')
+s2 = days2 > days1  # days2 is subset of days1
+print(f'days2 is subset of days1 is {s2}')
 '''
 Output:
 days2 is superset of days1 is False
