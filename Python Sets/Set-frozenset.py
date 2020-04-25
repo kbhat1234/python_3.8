@@ -91,3 +91,36 @@ type(f6) is <class 'frozenset'>
 f6 is frozenset({40, 50, 20, 30})
 '''
 # f6.add(10)  # not possible to add, remove, or modify the frozenset
+print('====================================================================')
+l1 = frozenset([1, 2, 3, 4, 5])
+print(type(l1))
+print(l1)
+l2 = frozenset(('a', 'b', 2, 4))
+print(type(l2))
+print(l2)
+l3 = frozenset({1, 2, 9, 8, 0})
+print(type(l3))
+print(l3)
+l4 = frozenset({1: 'apple', 'orange': 20})
+print(type(l4))
+print(l4)
+l5 = frozenset('karthik')
+print(type(l5))
+print(l5)
+print('=====================================================================')
+'''
+Output:
+====================================================================
+<class 'frozenset'>
+<class 'frozenset'>
+frozenset({1, 2, 3, 4, 5})
+<class 'frozenset'>
+frozenset({2, 'a', 4, 'b'})
+<class 'frozenset'>
+frozenset({0, 1, 2, 8, 9})
+<class 'frozenset'>
+frozenset({1, 'orange'})
+<class 'frozenset'>
+frozenset({'r', 'h', 'i', 'a', 'k', 't'})
+=====================================================================
+'''
