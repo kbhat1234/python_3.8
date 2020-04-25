@@ -679,3 +679,4 @@ git reflog
 753403e HEAD@{12}: checkout: moving from local to master
 '''
 
+git push --set--upstream origin feature
