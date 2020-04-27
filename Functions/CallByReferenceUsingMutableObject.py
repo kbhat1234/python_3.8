@@ -44,25 +44,3 @@ dic outside function is {10: 'karthik', 20: 'ishani', 30: 'kaustubh', 40: 'rini'
 keys of dic is dict_keys([10, 20, 30, 40, 50])
 values of dic is dict_values(['karthik', 'ishani', 'kaustubh', 'rini', 'ashish'])
 '''
-
-
-# call by reference - using immutable objects tuple, string
-# defing function
-
-
-def change_string(str1):
-    str1 = str1 + 'How r u'
-    print(f'printing string inside the function {str1}')
-
-
-string1 = 'karthik, '
-change_string(string1)  # calling the function
-'''
-Output:
-printing string inside the function karthik, How r u
-'''
-print(f'printing string outside the function {string1}')
-'''
-Output:
-printing string outside the function karthik, 
-'''
