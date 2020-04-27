@@ -1,3 +1,4 @@
+# defining functions here
 def func1(name):
     l = list(name)
     print(f'hello world {name}')
@@ -91,7 +92,6 @@ set f5 is frozenset({'a', 'b', 'g', 'e', 'c', 'f', 'd'})
 end of program
 '''
 
-"""
 st = 'sachin'
 func1(st)  # passing string st as argument to the calling function
 '''
@@ -145,4 +145,3 @@ Output:
 set f5 is frozenset({'h', 'b', 'a', 't'})
 end of program
 '''
-"""
