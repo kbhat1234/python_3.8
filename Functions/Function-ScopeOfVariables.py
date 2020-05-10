@@ -49,3 +49,12 @@ print(f's value outside function is {s}')
 Output:
 s value outside function is 1
 '''
+
+# print(f'name is {name}')
+'''
+Output:
+Traceback (most recent call last):
+  File "C:/Users/karth/PycharmProjects/PythonPackage/Programs/Functions/Function-ScopeOfVariables.py", line 53, in <module>
+    print(f'name is {name}')
+NameError: name 'name' is not defined
+'''
