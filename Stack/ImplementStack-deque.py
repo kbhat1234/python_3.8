@@ -9,6 +9,7 @@ stack.append('B')
 stack.append('C')
 stack.append('D')
 stack.append('E')
+
 print(stack)
 print(len(stack))
 stack.pop()

@@ -1,5 +1,6 @@
 # implement stack using queue
 from queue import LifoQueue
+from queue import SimpleQueue
 
 stack = LifoQueue(maxsize=3)  # LifoQueue maxsize is 3
 print(f'max size is {stack.maxsize}')
