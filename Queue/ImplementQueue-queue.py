@@ -4,28 +4,30 @@ from queue import Queue
 
 
 def queue_display():
-    print(f'queue max size is {l.maxsize}')
-    print(f'queue elements is {l.queue}')
-    print(f'queue size is {l.qsize()}')
-    print(f'"type(l)" is {type(l)}')
+    print(f'queue max size is {q.maxsize}')
+    print(f'queue elements is {q.queue}')
+    print(f'queue size is {q.qsize()}')
+    print(f'"type(l)" is {type(q)}')
+    print(f'queue is full {q.full()}')
+    print(f'queue is empty {q.empty()}')
 
 
-l = Queue(maxsize=5)
+q = Queue(maxsize=5)
 queue_display()
 '''
 Output:
 queue max size is 5
 queue elements is deque([])
 queue size is 0
-"type(l)" is <class 'queue.Queue'>
+"type(q)" is <class 'queue.Queue'>
 '''
 
 print('----adding elements to queue (QUEUE ENQUEUE)-----')
-l.put('A')  # 'A' added from rear end of queue
-l.put('B')  # 'B' added from rear end of queue
-l.put('C')
-l.put('D')
-l.put('E')
+q.put('A')  # 'A' added from rear end of queue
+q.put('B')  # 'B' added from rear end of queue
+q.put('C')
+q.put('D')
+q.put('E')
 queue_display()  # queue_display() function call to display details of queue
 '''
 Output:
@@ -33,12 +35,12 @@ Output:
 queue max size is 5
 queue elements is deque(['A', 'B', 'C', 'D', 'E'])
 queue size is 5
-"type(l)" is <class 'queue.Queue'>
+"type(q)" is <class 'queue.Queue'>
 '''
 
-print('----deleting elements from queue (QUEUE DEQUEUE-----')
-l.get()  # 'A' removed from front end of queue
-l.get()  # 'B' removed from front end of queue
+print('----removing elements from queue (QUEUE DEQUEUE-----')
+q.get()  # 'A' removed from front end of queue
+q.get()  # 'B' removed from front end of queue
 queue_display()  # queue_display() function call to display details of queue
 '''
 Output:
@@ -46,5 +48,27 @@ Output:
 queue max size is 5
 queue elements is deque(['C', 'D', 'E'])
 queue size is 3
-"type(l)" is <class 'queue.Queue'>
+"type(q)" is <class 'queue.Queue'>
+'''
+
+print('---removing all elements from queue------')
+q.get()
+q.get()
+q.get()
+queue_display()
+'''
+Output:
+---removing all elements from queue------
+queue max size is 5
+queue elements is deque([])
+queue size is 0
+"type(q)" is <class 'queue.Queue'>
+'''
+
+print('---removing element when queue is empty------')
+q.get()
+queue_display()
+'''
+Output:
+No error seen on IndexError
 '''

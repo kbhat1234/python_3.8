@@ -4,6 +4,7 @@ def list_display():
     print(f'"type(l)" is {type(l)}')
     print(f'list elements is {l}')
 
+
 l = []  # empty list
 list_display()
 '''
@@ -37,4 +38,23 @@ Output:
 "len(l)" is 2
 "type(l)" is <class 'list'>
 list elements is ['C', 'D']
+'''
+
+# removing all elements from queue using list
+l.pop(0)  # 'C' is removed
+l.pop(0)  # 'D' is removed
+list_display()
+'''
+Output:
+"len(l)" is 0
+"type(l)" is <class 'list'>
+list elements is []
+'''
+
+# perform pop() operation when no elements in queue using list
+# l.pop(0)  # we get IndexError
+# list_display()
+'''
+Output:
+IndexError: pop from empty list
 '''

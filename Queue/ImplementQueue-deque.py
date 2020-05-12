@@ -1,48 +1,60 @@
+import collections
 from collections import deque
 
 
 # implement queue using collections.deque
-def deque_display():
-    print(f'queue is {d}')
-    print(f'"type(d)" is {type(d)}')
+def queue_display():
+    print(f'queue is {q}')
+    print(f'"type(q)" is {type(q)}')
 
 
-d = deque()
-deque_display()
+q = deque()
+queue_display()
 '''
 Output:
-deque([])
-<class 'collections.deque'>
+queue is deque([])
+"type(q)" is <class 'collections.deque'>
 '''
 
 print('-----adding elements to queue-----')
-d.append('A')  # 'A' is added to the queue d
-d.append('B')
-d.append('C')
-d.append('D')
-deque_display()
+q.append('A')  # 'A' is added to the queue d
+q.append('B')
+q.append('C')
+q.append('D')
+queue_display()
 '''
 Output:
-deque(['A', 'B', 'C', 'D'])
-<class 'collections.deque'>
+-----adding elements to queue-----
+queue is deque(['A', 'B', 'C', 'D'])
+"type(q)" is <class 'collections.deque'>
 '''
 
 print('----removing elements from queue----')
-d.popleft()  # 'A' is removed from the queue d
-d.popleft()
-d.popleft()
-d.popleft()
-# d.popleft()
+q.popleft()  # 'A' is removed from the queue d
+q.popleft()
+queue_display()
 '''
 Output:
-Traceback (most recent call last):
-  File "C:/Users/karth/PycharmProjects/PythonPackage/Programs/Queue/ImplementQueue-deque.py", line 35, in <module>
-    d.popleft()
+----removing elements from queue----
+queue is deque(['C', 'D'])
+"type(q)" is <class 'collections.deque'>
+'''
+
+print('----removing all elements from queue----')
+q.popleft()
+q.popleft()
+queue_display()
+'''
+Output:
+----removing all elements from queue----
+queue is deque([])
+"type(q)" is <class 'collections.deque'>
+'''
+
+# print('----removing elements when queue is empty-----')
+# q.popleft()
+# queue_display()
+'''
+Output:
 IndexError: pop from an empty deque
-'''
-deque_display()
-'''
-Output:
-deque(['C', 'D'])
-<class 'collections.deque'>
 '''
