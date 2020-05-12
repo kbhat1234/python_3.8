@@ -14,9 +14,19 @@ print(stack)
 print(len(stack))
 stack.pop()
 stack.pop()
-print(stack)
+stack.pop()
+stack.pop()
+stack.pop()
 # stack.pop()
-# print(stack)
+'''
+Output:
+Traceback (most recent call last):
+  File "C:/Users/karth/PycharmProjects/PythonPackage/Programs/Stack/ImplementStack-deque.py", line 20, in <module>
+    stack.pop()
+IndexError: pop from an empty deque
+'''
+
+print(stack)
 '''
 Output:
 deque([])
