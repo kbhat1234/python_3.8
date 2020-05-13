@@ -43,12 +43,6 @@ student = {
     'landline': None
 }
 
-# student1 tuple
-student1 = ('karthik', 23233, 40, 3423434.232)
-
-# student2 list
-student2 = ['ishani', 'kaustubh', 'rini', 'karthik']
-
 # convert python dictionary object to JSON string
 d1 = j.dumps(student)
 print(f'convert python object (dictionary) to JSON string is \n{d1}')
@@ -67,6 +61,9 @@ None
 student dic is {'fname': 'Karthik', 'lname': 'Bhat', 'mname': 'K', 'age': 40, 'salary': 2500000.77, 'gender': {'man': 'male', 'woman': 'female'}, 'contact no': True, 'mobile': 9886867677, 'landline': None}
 '''
 
+# student1 tuple
+student1 = ('karthik', 23233, 40, 3423434.232)
+
 # convert python tuple object to JSON string
 d2 = j.dumps(student1)
 print(f'convert python object (tuple) to JSON string is \n{d2}')
@@ -82,6 +79,9 @@ student1 tup is ('karthik', 23233, 40, 3423434.232)
 <class 'tuple'>
 <class 'str'>
 '''
+
+# student2 list
+student2 = ['ishani', 'kaustubh', 'rini', 'karthik']
 
 # convert python list object to JSON string
 d3 = j.dumps(student2)
