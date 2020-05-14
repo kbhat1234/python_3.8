@@ -37,7 +37,7 @@ student = {
 }
 
 # open or create a file with write mode to student.json
-with open('student.json', 'w') as file_write:
+with open('json files/student.json', 'w') as file_write:
     # using dump() function, convert python data object (dictionary) to JSON data object and write to file
     j.dump(student, file_write)
     file_write.close()
@@ -59,7 +59,7 @@ female
 student1 = ('karthik', 20, 20033.88, 'male')
 
 # open or create file with open mode to write to student1.json
-with open('student1.json', 'w') as file_write:
+with open('json files/student1.json', 'w') as file_write:
     j.dump(student1, file_write)
     file_write.close()
 tup_display()
@@ -75,7 +75,7 @@ student1 tuple is ('karthik', 20, 20033.88, 'male')
 student2 = ['karthik', 20, 20033.88, 'male']
 
 # open or create file with write mode to student2.json
-with open('student2.json', 'w') as file_write:
+with open('json files/student2.json', 'w') as file_write:
     j.dump(student2, file_write)
     file_write.close()
 li_display()
