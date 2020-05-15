@@ -1,4 +1,5 @@
 import json as j
+import collections as c
 
 obj = '{"userId": 1, "firstName": "Krish", "lastName": "Lee", "phoneNumber": "123456", "emailAddress": "krish.lee@learningcontainer.com"}'
 
@@ -19,3 +20,10 @@ with open('json files/dic1.json', 'r') as rf:
     a2 = j.load(rf)
     print(j.dumps(a2, indent=3, sort_keys=False))
     rf.close()
+
+d1 = c.defaultdict(int)
+print(d1)
+print(type(d1))
+d1['age'] = 30
+d1['number'] = 9886867677
+print(d1)
