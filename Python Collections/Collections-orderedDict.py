@@ -12,7 +12,6 @@ dic = {
 print(f'dic items is {dic}')
 print(f'dic items is {dic.items()}')
 print(f'"type(dic)" is {type(dic)}')
-print(f'"type(dic)" is {type(dic)}')
 '''
 Output:
 {'a': 70, 'e': 20, 'f': 30, 'b': 40, 'c': 50}
@@ -28,7 +27,6 @@ d1['E'] = 50
 d1['B'] = 20
 d1['C'] = 30
 d1['B'] = 90
-
 for k, v in d1.items():
     print(k, v)
 '''
