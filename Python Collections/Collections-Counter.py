@@ -21,12 +21,12 @@ list1 elements with counter Counter()
 '''
 
 # list2 with elements
-list2 = [1, 2, 3, 4, 5, 5, 10, 12, 2, 2, 9, 10]
+list2 = [1, 2, 3, 4, 5, 7, 8, 5, 9, 6, 10]
 print(f'list2 elements is {list2}')
 print(f'"type(list2)" is {type(list2)}')
 '''
 Output:
-list2 elements is [1, 2, 3, 4, 5, 5, 10, 12, 2, 2, 9, 10]
+list2 elements is [1, 2, 3, 4, 5, 5, 7, 8, 5, 9, 6, 10]
 "type(list2)" is <class 'list'>
 '''
 

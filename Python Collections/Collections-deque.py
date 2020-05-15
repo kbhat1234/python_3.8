@@ -12,6 +12,12 @@ l1 elements is [10, 20, 40, 5, 2, 6, True, False, None]
 
 # deque(l1)
 l = c.deque(l1)
+l.appendleft(20)
+l.appendleft(9)
+l.append(100)
+l.append(200)
+l.pop()
+l.popleft()
 print(f'deque elements is {l}')
 print(f'"type(l)" is {type(l)}')
 '''
