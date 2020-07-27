@@ -8,4 +8,3 @@ print(type(y))
 
 z = "Hello"[0]
 print(z)
-import numpy as np
