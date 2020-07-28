@@ -24,5 +24,12 @@ print(n6)
 
 n7 = np.ones((3, 3))
 print(n7)
+t = np.transpose(n3)
+print(t)
 
+r = np.random.rand(5)
+print(r)
+
+np1 = np.array([[10, 20, 30], [2, 3, 4]])
+print(np1)
 
