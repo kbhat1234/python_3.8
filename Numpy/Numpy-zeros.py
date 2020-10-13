@@ -11,3 +11,4 @@ print(n2)
 print(n2.shape)
 print(n2.dtype)
 print(type(n2))
+l
