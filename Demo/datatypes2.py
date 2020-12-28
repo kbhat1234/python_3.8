@@ -1,0 +1,16 @@
+list1 = [10, 'karthik', 20 + 5j, 3+2, 7.66]
+
+print(list1)
+print(type(list1))
+print(list1[:])
+print(list1[1:])
+print(list1[2:5])
+print(list1[0])
+print(list1[:3])
+list1.insert(0, 'rini')
+list1.insert(3, 55)
+#  print(list1)
+list1.append(10)
+#  print(list1)
+print(list1 * 2)
+print(list1 + list1)
