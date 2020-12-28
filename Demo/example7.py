@@ -1,9 +1,14 @@
+glo = 1000
+
+
 def sum(a, b):
+    print(glo)
     c = a + b
     return c
 
 
 def diff(a, b):
+    print(glo)
     if a > b:
         c = a - b
         return c
@@ -13,11 +18,13 @@ def diff(a, b):
 
 
 def mul(a, b):
+    print(glo)
     c = a * b
     return c
 
 
 def div(a, b):
+    print(glo)
     if a > b:
         c = a / b
         return c
@@ -38,4 +45,9 @@ print(f'Multiply is {m}')
 d1 = div(2, 10)
 print(f'Division is {d1}')
 
+#  print(f'{a} {b} {c}')
+print(glo)
+
+print(id(glo))
+#  del glo
 
