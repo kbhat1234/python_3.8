@@ -1,6 +1,7 @@
 import os as o
 
-print(o.mkdir("C:\\Users\\karth\\PycharmProjects\\PythonPackage\\Programs\\Python OS Module\\Karthik"))
+o.mkdir("C:\\Users\\karth\\PycharmProjects\\PythonPackage\\Programs\\Python OS Module\\Karthik")
+print(f'directory created')
 
 '''
 Output:
