@@ -230,7 +230,7 @@ https://github.com/kbhat1234/shell-script.git
 +refs/heads/*:refs/remotes/destination/*
 '''
 
-# view the current remotes
+s# view the current remotes
 git remote -v
 '''
 Output:
