@@ -176,6 +176,13 @@ Output:
 Reinitialized existing Git repository in C:/Users/karth/PycharmProjects/PythonPackage/Programs/.git/
 '''
 
+#git initialize an empty repository named folder demo
+git init demo
+'''
+Output:
+Initialized empty Git repository in C:/Users/kbhat2376/Projects/abcd/.git/
+'''
+
 # link the local repository to an empty GitHub repository
 # git remote add origin [url]
 git remote add origin https://github.com/kbhat1234/python_3.8.git
