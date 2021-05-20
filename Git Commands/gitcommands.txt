@@ -5,6 +5,15 @@ Output:
 git version 2.26.0.windows.1
 '''
 
+#git help [command to get help for]
+git help --all
+
+#get help for git stash
+git help stash
+
+#get help for git commit
+git help commit
+
 # setting username
 git config --global user.name "kbhat1234"
 git config user.name
