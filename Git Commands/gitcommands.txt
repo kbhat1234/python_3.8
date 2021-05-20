@@ -151,6 +151,24 @@ branch.master.remote=origin
 branch.master.merge=refs/heads/master
 '''
 
+#git alias (--global config)
+git config --global alias.ch checkout
+git config --global alias.st status
+git config --global alias.br branch
+git config --global alias.co commit
+
+#git alias (--local config)
+git config --local alias.ch checkout
+git config --local alias.st status
+git config --local alias.br branch
+git config --local alias.co commit
+
+#git alias (--system config)
+git config --system alias.ch checkout
+git config --system alias.st status
+git config --system alias.br branch
+git config --system alias.co commit
+
 # git initialization
 git init
 '''
