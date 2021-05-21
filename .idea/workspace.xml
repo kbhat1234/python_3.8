@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ec20d61-5e92-4de0-94dd-5c6062f2189f" name="Default Changelist" comment="" />
+    <list default="true" id="3ec20d61-5e92-4de0-94dd-5c6062f2189f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/file1.chm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file2.chm" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
