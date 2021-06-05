@@ -922,3 +922,41 @@ git reflog
 '''
 
 git push --set--upstream origin feature
+
+git branch -a
+git branch -r
+git branch --remotes
+git branch
+
+git branch new_branch
+git checkout -b new_branch
+git branch -m new_branch branch1.0
+git branch -d branch1.0
+git branch -D branch1.0
+
+git checkout master
+
+git pull devops master
+
+
+git restore --staged a1.txt
+git status
+git status -s
+git status --long
+git status -u
+
+git add .
+git add *
+git add a1.txt a2.txt
+
+git config --list
+git config --global --list
+git config --local --list
+git config --system --list
+
+git config --global alias.rs restore
+git config --local remote.devops.url https://github.com/kbhat1234/DevOps_GIT.git
+git config --system credential.https://dev.azure.com.usehttppath true
+
+git config alias.rs
+git config remote.devops.url
