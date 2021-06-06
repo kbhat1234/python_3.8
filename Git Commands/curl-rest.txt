@@ -1,0 +1,354 @@
+$ curl -i -X GET 'https://reqres.in/api/users/2' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   280  100   280    0     0    729      0 --:--:-- --:--:-- --:--:--   731HTTP/2 200
+date: Sun, 06 Jun 2021 03:46:45 GMT
+content-type: application/json; charset=utf-8
+content-length: 280
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"118-pbdwwFo9SKNhD3Lx5iHJyngpq00"
+via: 1.1 vegur
+cache-control: max-age=14400
+cf-cache-status: HIT
+age: 2231
+accept-ranges: bytes
+cf-request-id: 0a810733cb00004ad50f362000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=zRwbCCblVn%2B3a8t1KzhrYLLGPXjeJoxg2nI1s0sAZDuoGgm9kWJEYtaX%2B%2Fn65eH%2BtXYX40NoocyEss902Jp%2FSYdCpsdv2GzLdqPQKeB2nNxTQbJN7uB41lshfer9SaxFjSmt"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aea7cc799d4ad5-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+
+
+
+$ curl -i -X GET 'https://reqres.in/api/users?page=2' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1030  100  1030    0     0   2562      0 --:--:-- --:--:-- --:--:--  2562HTTP/2 200
+date: Sun, 06 Jun 2021 03:50:17 GMT
+content-type: application/json; charset=utf-8
+content-length: 1030
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"
+via: 1.1 vegur
+cache-control: max-age=14400
+cf-cache-status: HIT
+age: 5214
+accept-ranges: bytes
+cf-request-id: 0a810a6e4a00004ae7f18d3000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=Zi802T5yFLh6cRn28us2Mk7EYm4eguBFNt5lO2HcEXufqFTf%2BRR3HvZ80Ch9bbkPu4KRuDbbkS4KWrMaxw7rTCP%2FgHGDOmXiADfKNqj96NQ682dwHJ4Jz%2Fcz8gl9mC89p9zw"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aeacf6de9e4ae7-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+
+
+$ curl -i -X GET 'https://reqres.in/api/users/287' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     2  100     2    0     0      2      0  0:00:01 --:--:--  0:00:01     2HTTP/2 404
+date: Sun, 06 Jun 2021 03:51:26 GMT
+content-type: application/json; charset=utf-8
+content-length: 2
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+via: 1.1 vegur
+cache-control: max-age=14400
+cf-cache-status: MISS
+cf-request-id: 0a810b78ac00004ae73b12f000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=v9BfXFalKcdZcucC%2F6MfbmZUYue%2BMLqnHm411j4zLvLZhnlasD9UZ108TYJzWRy3CAqb5gjq0W7BN9Onuic7gSH8CyVOaZp4k0xDoa7N3%2BYkUMOjr0n8Tds%2F7s9APNztrH%2BL"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aeaea11a934ae7-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{}
+
+
+$ curl -i -X GET 'https://reqres.in/api/unknown' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   705  100   705    0     0   1931      0 --:--:-- --:--:-- --:--:--  1936HTTP/2 200
+date: Sun, 06 Jun 2021 03:54:28 GMT
+content-type: application/json; charset=utf-8
+content-length: 705
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"2c1-N6Rqerxquq2kgQhL51EiSg4x0R8"
+via: 1.1 vegur
+cache-control: max-age=14400
+cf-cache-status: HIT
+age: 1280
+accept-ranges: bytes
+cf-request-id: 0a810e42de00004b167e3cf000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=9VnuuJO80LLPGr9zDN8wHkURr5l2TitutiJMMC7KqCHb7sV%2FOlejj%2Bd1Ae7nKGB%2B165fkT1evm3UmzFGSCrVd3EAquH1kWs1JLMmiKyTGQpRdjeKpSkQIcz8McOK4TEdjgbJ"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aeb317c9b24b16-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"name":"cerulean","year":2000,"color":"#98B2D1","pantone_value":"15-4020"},{"id":2,"name":"fuchsia rose","year":2001,"color":"#C74375","pantone_value":"17-2031"},{"id":3,"name":"true red","year":2002,"color":"#BF1932","pantone_value":"19-1664"},{"id":4,"name":"aqua sky","year":2003,"color":"#7BC4C4","pantone_value":"14-4811"},{"id":5,"name":"tigerlily","year":2004,"color":"#E2583E","pantone_value":"17-1456"},{"id":6,"name":"blue turquoise","year":2005,"color":"#53B0AE","pantone_value":"15-5217"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+
+
+$ curl -i -X GET 'https://reqres.in/api/unknown/2' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   232  100   232    0     0    537      0 --:--:-- --:--:-- --:--:--   537HTTP/2 200
+date: Sun, 06 Jun 2021 03:55:36 GMT
+content-type: application/json; charset=utf-8
+content-length: 232
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"e8-ov4wWh4/OY1IMQMqWgskYtOFnVs"
+via: 1.1 vegur
+cache-control: max-age=14400
+cf-cache-status: HIT
+age: 7144
+accept-ranges: bytes
+cf-request-id: 0a810f4b1700004b11c1b96000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=mbUTD%2F%2F%2B%2FEErKB7dVoLAsozIJ5WSg2PEshaGISjGsJVTewCxK9MyqEEFrtUomIh3QZ60P0VWN8qz33EUhmW3RcbkxE%2BrU5iF%2BkpW2sSHxw0B7VHlQKYyx86umHPnMs3Vj8%2Ba"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aeb4be88404b11-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"data":{"id":2,"name":"fuchsia rose","year":2001,"color":"#C74375","pantone_value":"17-2031"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+
+
+$ curl -i -X GET 'https://reqres.in/api/unknown/23' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     2  100     2    0     0      6      0 --:--:-- --:--:-- --:--:--     6HTTP/2 404
+date: Sun, 06 Jun 2021 03:56:31 GMT
+content-type: application/json; charset=utf-8
+content-length: 2
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+via: 1.1 vegur
+cache-control: max-age=14400
+cf-cache-status: HIT
+age: 17
+cf-request-id: 0a8110228800004afe8b275000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=59SIrNrscZrN0zBtWhTvBeIC3ycvguKnASjTL4uS7KnhGlJ9LkhPFbZjqvlIrvHph24v%2Fo1vSyop56Nzcjf9EeAkEw6Ol94lj6JQ9%2B5vC6PCbu968TKMdvKXdDcT9FTVu%2Flu"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aeb61738494afe-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{}
+
+
+$ curl -i -X POST 'https://reqres.in/api/users' -d '{"name": "karthik bhat", "job": "Software Engineer"}' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   169  100   117  100    52    138     61 --:--:-- --:--:-- --:--:--   199HTTP/2 201
+date: Sun, 06 Jun 2021 04:02:32 GMT
+content-type: application/json; charset=utf-8
+content-length: 117
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"75-8vefGjBg30zaz7TPUmEofb5lwTE"
+via: 1.1 vegur
+cf-cache-status: DYNAMIC
+cf-request-id: 0a8115a3fc00004b053ab18000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=IMu%2BALT0CSTX93J2fv%2BUAxnwv2SJshFfoiWJHK8n04bWwrwei3TbuzyB2zmn8n76D3ulVan%2BGebKSNauf4GavXsm43szwYqSOhuluAifhBYzWt22KPZHcU5l9k16SrYMNf%2BG"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aebee65cf74b05-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"{\"name\": \"karthik bhat\", \"job\": \"Software Engineer\"}":"","id":"763","createdAt":"2021-06-06T04:02:32.377Z"}
+
+
+$ curl -i -X PUT 'https://reqres.in/api/users/2' -d '{"name": "Kaustubh", "job": "School"}' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   128  100    91  100    37    111     45 --:--:-- --:--:-- --:--:--   156HTTP/2 200
+date: Sun, 06 Jun 2021 04:09:24 GMT
+content-type: application/json; charset=utf-8
+content-length: 91
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"5b-ZizeF7Gwzh6UGP2mA4W0I+pnmcQ"
+via: 1.1 vegur
+cf-cache-status: DYNAMIC
+cf-request-id: 0a811bec4300004acfedbe9000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=J7rPL09piXR03G4f825aKxyfjg8mS5POV%2FgY8w0SRkQyO7vSrDnC0TLKnpX9wDxaNFm1zqJWom3W7xRV%2FU%2Fa9OonRJ1MDEkpKxNdle2ZWWvPPDf%2FOCTU4oLjXSOTRvbXH0mz"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aec8f39c094acf-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"{\"name\": \"Kaustubh\", \"job\": \"School\"}":"","updatedAt":"2021-06-06T04:09:24.093Z"}
+
+
+$ curl -i -X PATCH 'https://reqres.in/api/users/2' -d '{"name": "Kaustubh", "job": "2nd standard"}' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   140  100    97  100    43    136     60 --:--:-- --:--:-- --:--:--   197HTTP/2 200
+date: Sun, 06 Jun 2021 04:10:55 GMT
+content-type: application/json; charset=utf-8
+content-length: 97
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"61-MOqWvQpb0YvuOEBuKdrU50gVEg8"
+via: 1.1 vegur
+cf-cache-status: DYNAMIC
+cf-request-id: 0a811d51bf00004aec12b5c000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=PhDKokGrddltiWqJMLcs0Rf49n5HRNbq2UF7bO2adOWjkJlojgdF3PVolKPAG0B2Dh2fxytjMq%2BXjFWX4Yb8pka%2F5edVr2fMSamWTY2gHQzDMYaaVYSsaw6k4mWZWKAr%2Bm25"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aecb2f98194aec-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"{\"name\": \"Kaustubh\", \"job\": \"2nd standard\"}":"","updatedAt":"2021-06-06T04:10:55.633Z"}
+
+
+$ curl -i -X DELETE 'https://reqres.in/api/users/2' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0HTTP/2 204
+date: Sun, 06 Jun 2021 04:13:30 GMT
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+via: 1.1 vegur
+cf-cache-status: DYNAMIC
+cf-request-id: 0a811fad6000004b1731955000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=gTnk3I6s%2BlEI8RBWUWXEmkbSzfiL4q99TLufrmAklAPde9DA0Nkpjz25sj6kq4%2FD3IPsJJ%2BjEL0dYCDVMcr7wnFl0SLxG19zHrOT8MVxtltLXCeu7X7nNCx2Guu%2F8znLyohb"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aecef56ae24b17-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+
+$ curl -i -X POST 'https://reqres.in/api/register' -d '{"email": "eve.holt@reqres.in", "password": "pistol"}' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    90  100    37  100    53     35     51  0:00:01  0:00:01 --:--:--    87HTTP/2 400
+date: Sun, 06 Jun 2021 04:20:26 GMT
+content-type: application/json; charset=utf-8
+content-length: 37
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"25-Ik70kof1lbc973ShN5FoVPxYn7A"
+via: 1.1 vegur
+cf-cache-status: DYNAMIC
+cf-request-id: 0a812607b800004af282133000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=FjsNDkKxOCvqutcWgxM%2Fbal7WhG2tSzEriDi4PCBCAE3SjfTHZSx0%2Fdz%2FZ5mJ9Am3e%2FgU%2BaUmHRcFZxKjrdmP7OBCrX4HEYBpfjfxmTPEsvVbW%2BMdWYizVLMmUqUV1zpR2K8"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aed91f8bca4af2-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"id": 4, "token": "QpwL5tke4Pnpja7X4"}
+
+
+$ curl -i -X POST 'https://reqres.in/api/register' -d '{"email": "eve.holt@reqres.in"}' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    68  100    37  100    31     46     38 --:--:-- --:--:-- --:--:--    85HTTP/2 400
+date: Sun, 06 Jun 2021 04:21:38 GMT
+content-type: application/json; charset=utf-8
+content-length: 37
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"25-Ik70kof1lbc973ShN5FoVPxYn7A"
+via: 1.1 vegur
+cf-cache-status: DYNAMIC
+cf-request-id: 0a8127225f00004ae1cc907000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=c%2BFqpapOFZyFGwYtB8qmYkBjWtnUDthaKM6SKAwW9P%2BI0%2B%2FaGGT%2BAGDJP%2BleCGUl7Gz1vu0sfsDHEVS5hNKf2jZLmYynncPuRH3HbShqupTsUFiMAuORwP96QyHk1Fp6mfkd"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aedae3ce484ae1-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"error":"Missing password"}
+
+$ curl -i -X POST 'https://reqres.in/api/login' -d '{"email": "eve.holt@reqres.in", "password": "cityslicka"}' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    94  100    37  100    57     41     64 --:--:-- --:--:-- --:--:--   106HTTP/2 400
+date: Sun, 06 Jun 2021 04:27:17 GMT
+content-type: application/json; charset=utf-8
+content-length: 37
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"25-Ik70kof1lbc973ShN5FoVPxYn7A"
+via: 1.1 vegur
+cf-cache-status: DYNAMIC
+cf-request-id: 0a812c4c0d00004b169c203000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=tOTVXn%2BstIlvgDPQLd6%2B8P4P5zm3KljEWAkpihEieltAtlSl28cVQUHC974G8wdh1tAyrvsBKtijBX7rWZWVYPAxQJ%2BUielP8%2FtH%2BmaP%2FEWIFTeQIhoUnVuuKH0GkOI%2Bp99c"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aee3267a464b16-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"token": "QpwL5tke4Pnpja7X4"}
+
+
+$ curl -i -X POST 'https://reqres.in/api/login' -d '{"email": "eve.holt@reqres.in"}' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    68  100    37  100    31     53     44 --:--:-- --:--:-- --:--:--    98HTTP/2 400
+date: Sun, 06 Jun 2021 04:29:32 GMT
+content-type: application/json; charset=utf-8
+content-length: 37
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"25-Ik70kof1lbc973ShN5FoVPxYn7A"
+via: 1.1 vegur
+cf-cache-status: DYNAMIC
+cf-request-id: 0a812e5cf200004b22a0a3d000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=kqWQtH%2BM%2BSHiiUJKUySUgex%2FQ50dUM03zhdJO0aXqE2qFdtGfjsXk1zGqR6vk6LsSPRHNW2PBTkbIxXVRd8Dn8f4InRRChooNCf%2FXLhR2QAiyCC8ZaeNY02XbkJNlXNzxJ6z"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aee674b8444b22-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"error":"Missing password"}
+
+
+$ curl -i -X GET 'https://reqres.in/api/users?delay=10' -H 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   996  100   996    0     0     91      0  0:00:10  0:00:10 --:--:--   218HTTP/2 200
+date: Sun, 06 Jun 2021 04:32:06 GMT
+content-type: application/json; charset=utf-8
+content-length: 996
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"
+via: 1.1 vegur
+cf-cache-status: DYNAMIC
+cf-request-id: 0a81308d7d00004ada7638d000000001
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=Ed6XQWqOUA7kBjiqgKElZLVdBLGCcZBWwUb6UshHnGLabukYqG2ez9d7Ucnj7Saaz1QBS5RN8YEZ4%2FclExVF%2FZMQck2aFyWwIzQPmEqDD1wxKhcCPTbfKoR0KC2X43s2DJd8"}],"group":"cf-nel","max_age":604800}
+nel: {"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 65aee9f5999f4ada-HYD
+alt-svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400
+
+{"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
