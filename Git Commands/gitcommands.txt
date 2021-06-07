@@ -1124,3 +1124,11 @@ git rm --staged file2.txt
 
 #Req3: Remove the files only from workig tree and not from staging index area
 rm file3.txt
+
+
+#git checkout - unstaged changes/files of tracked files
+git checkout -- file1.txt
+
+#git checkout - untracked files do not work
+git checkout -- file1.txt
+#
