@@ -1109,3 +1109,18 @@ index 9a6b358..0000000
 -Welcome to jungle
 -fsdfksdjfkjskfjkls
 -sdkfjskdjfks
+
+
+# git rm command
+#Req1: Remove the files from both working tree and from staging index area
+git rm -f file1.txt --> one file or more from staging and working tree
+git rm -rf . -> remove All files from staging and working tree
+
+
+#Req2: Remove the files only from staging index area and not from working tree
+git rm --cached file2.txt
+or
+git rm --staged file2.txt
+
+#Req3: Remove the files only from workig tree and not from staging index area
+rm file3.txt
