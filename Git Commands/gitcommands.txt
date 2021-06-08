@@ -1131,4 +1131,20 @@ git checkout -- file1.txt
 
 #git checkout - untracked files do not work
 git checkout -- file1.txt
-#
+
+
+#git reset command
+#remove the changes from staging area and not working direcrtory
+touch k2.inc
+
+ls -al
+
+git add k2.inc
+
+git ls-files
+'''
+Output:
+k2.inc
+'''
+
+git reset k2.inc
