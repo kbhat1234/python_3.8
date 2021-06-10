@@ -1148,3 +1148,29 @@ k2.inc
 '''
 
 git reset k2.inc
+
+git reset --mixed <commit-id>
+git reset --soft <commit-id>
+git reset --hard <commit-id>
+
+
+#git merging
+#------------Master branch
+touch a1.txt a2.txt a3.txt
+git add a1.txt;git commit -m "C1M"
+git add a2.txt;git commit -m "C2M"
+git add a3.txt;git commit -m "C3M"
+
+git log --oneline
+
+#-----checkout to feature branch----
+git checkout -b feature
+
+touch x1.txt x2.txt
+git add x1.txt;git commit -m "C1F"
+git add x2.txt;git commit -m "C2F"
+
+git log --oneline
+
+#-------checkout to master branch
+git merge feature
