@@ -1154,8 +1154,8 @@ git reset --soft <commit-id>
 git reset --hard <commit-id>
 
 
-#git merging
-#------------Master branch
+#--------------------git merging -> Fast forward merge-------------------
+#------------Master branch---------------------------
 touch a1.txt a2.txt a3.txt
 git add a1.txt;git commit -m "C1M"
 git add a2.txt;git commit -m "C2M"
@@ -1174,3 +1174,33 @@ git log --oneline
 
 #-------checkout to master branch
 git merge feature
+
+
+#--------------------git merging -> three way merge---------------------
+#----------------------Master branch---------------------
+touch a1.txt a2.txt
+git add a1.txt; git commit -m "C1M"
+git add a2.txt; git commit -m "C2M"
+
+git log --oneline
+
+#--------checkout and create a new feature branch--------------------
+git checkout -b feature
+
+#----------------Feature branch----------------------------
+touch x1.txt x2.txt
+git add x1.txt;git commit -m "C1F" 
+git add x2.txt;git commit -m "C2F"
+
+git log --oneline
+
+#------checkout to master branch---------------
+#add one file and update the existing file in master
+touch a3.txt
+vim a1.txt (add some lines of text)
+
+git add a3.txt;git commit -m "C3M"
+git add a1.txt;git commit -m "C4M"
+
+git merge feature
+
