@@ -1,0 +1,328 @@
+# give this command inside the container apt-get update apt-get install apache2 apt-get
+install curl apt-get install sqlite2 service apache2 status service apache2 start service apache2 stop
+
+
+docker basics
+
+# when no docker is installed sudo docker version
+
+Output:
+$ docker -version
+Command 'docker' not found, but can be installed with: sudo apt install docker.io
+===============================================================
+
+# when docker is installed sudo docker
+--version
+
+Output:
+$ docker --version Docker version 19.03.8, build afacb8b7f0
+================================================================
+
+# when docker is installed with version sudo docker version
+
+Output:
+$ sudo docker version
+
+
+Client:
+Version:	19.03.8
+API version:	1.40
+Go version:	go1.13.8
+Git commit:	afacb8b7f0
+Built:	Tue Jun 23 22:26:12 2020
+OS/Arch:	linux/amd64
+Experimental:	false
+
+Server:
+Engine:
+Version:	19.03.8
+API version:	1.40 (minimum version 1.12) Go
+version:	go1.13.8
+Git commit:	afacb8b7f0
+Built:	Thu Jun 18 08:26:54 2020
+OS/Arch:	linux/amd64
+Experimental:	false containerd:
+Version:	1.3.3-0ubuntu2 GitCommit:
+runc:
+Version:	spec: 1.0.1-dev
+ 
+GitCommit:
+docker-init:
+Version:	0.18.0
+GitCommit:
+=============================================================================
+# docker pull <image-name> - when pulling images from dockerhub sudo docker pull ubuntu Output:
+$ sudo docker pull ubuntu Using default tag: latest latest: Pulling from library/ubuntu 3ff22d22a855:
+Pull complete e7cb79d19722: Pull complete 323d0d660b6a: Pull complete b7f616834fd0: Pull complete
+Digest:sha256:5d1d5407f353843ecf8b16524bc5565aa332e9e6a1297c73a92d3e754b8a636d Status: Downloaded newer image for ubuntu:latest docker.io/library/ubuntu:latest
+===============================================================================
+
+# docker images - images downloaded on the docker engine(container) sudo docker images
+
+Output:
+$ sudo docker images	
+REPOSITORY	TAG	IMAGE ID	CREATED
+SIZE			
+ubuntu
+73.9MB	latest	1e4467b07108	10 days ago
+===================================================================================
+====
+
+# docker run - with ubuntu image on container sudo docker run -it
+-d ubuntu
+(-it: interactive terminal, -d: run in background as daemon)
+
+Output:
+$ sudo docker run -it -d ubuntu 723db1dd423425c1a001ea3fbf3118cc8e69ad4fac22d7cdacd0790208281c0b
+===================================================================================
+====
+
+# docker run -it -p <82:80> -d <image-name> - will run the image on thecontainer with the port forwarding. sudo docker run -it -p 82:80 -d ubuntu
+(-it: interactive terminal, -d: run in background as daemon, -p: portforwarding
+<container-port external: container port internal>) Output:
+
+# docker ps - list only container running in the system sudo docker ps
+
+Output:
+$ sudo docker ps	
+CONTAINER ID	IMAGE	COMMAND	CREATED
+STATUS	PORTS	NAMES
+ 
+723db1dd4234	ubuntu	"/bin/bash"	2 minutes ago	Up
+2 minutes		tender_mestorf		
+===================================================================================
+======================================================
+# docker ps -a - will list all containers running/exited insystem sudo docker ps -a Output:
+$ sudo docker ps -a
+CONTAINER ID	IMAGE		COMMAND CREATED	STATUS		PORTS
+	NAMES	
+0a783089cf38	ubuntu	"/bin/bash"	2 minutes ago	Up
+2 minutes
+723db1dd4234	
+ubuntu	romantic_rosalind
+"/bin/bash"	
+3 hours ago
+Exited (0) 2 minutes ago		tender_mestorf	
+===================================================================================
+===============================================================
+# docker container stop <container-id> - stopping the specific containerrunning. sudo docker stop 0a783089cf38 Output:
+$ sudo docker stop 0a783089cf38 0a783089cf38
+===================================================================================
+=====================================================
+
+# docker container exec -t <container-id> - by doing this we are logging intothe specific container sessions. sudo docker exec -it c519b3108c3b bash
+
+Output:
+$ sudo docker exec -it c519b3108c3bbash root@c519b3108c3b:/# ls
+bin	dev	home	lib32	libx32	mnt	proc	run	srv	tmp	var
+boot	etc	lib	lib64	media	opt	root	sbin	sys	usr	
+===================================================================================
+==========================================
+
+# docker kill <container-id> - will kill the containers which sometimes cannotbe safely exited due to some reasons. sudo docker kill c519b3108c3b
+
+Output:
+$ sudo docker kill 7c4683ab4625 7c4683ab4625
+===================================================================================
+==========================================
+
+# docker rm <container-id> - will delete/remove the containers which usedubuntu image. This is basically used to remove the containers.
+sudo docker rm 7c4683ab4625
+
+Output:
+$ sudo docker rm 7c4683ab4625 7c4683ab4625
+===================================================================================
+==========================================
+ 
+# docker rm -f $(docker ps -a -q) - will remove all containers running/exitedin the system sudo docker rm -f $(sudo docker ps -a -q)
+
+Output:
+$ sudo docker rm -f $(sudo docker ps -a-q) 42c4677fd302 4a64be7f1012
+===================================================================================
+===============================================
+
+# docker rmi <image-id> - will remove images from the docker system, rmi -remove image sudo docker rmi a24bb4013296
+
+Output:
+$ sudo docker images	
+REPOSITORY	TAG	IMAGE ID	CREATED
+SIZE			
+ubuntu
+73.9MB	latest	1e4467b07108	10 days ago
+alpine	latest	a24bb4013296	2 months ago
+5.57MB			
+
+$ sudo docker rmi a24bb4013296 Untagged: alpine:latest
+Untagged: alpine@sha256:185518070891758909c9f839cf4ca393ee977ac378609f700f60a771a2dfe321 Deleted: sha256:a24bb4013296f61e89ba57005a7b3e52274d8edd3ae2077d04395f806b63d83e Deleted: sha256:50644c29ef5a27c9a40c393a73ece2479de78325cae7d762ef3cdc19bf42dd0a
+===================================================================================
+==========================================
+
+# docker rmi <username>/<image-name>:<tag-name> - remove the image when thishas dependency on child images. sudo docker rmi kbhat2376/ubuntu-2020-08-06:latest
+
+Output:
+$ sudo docker images	
+REPOSITORY		TAG	IMAGE ID
+CREATED	SIZE		
+kbhat2376/ubuntu-2020-08-06-latest	latest	f225620c6fa1	About
+an hour ago	215MB			
+kbhat2376/ubuntu-2020-08-06
+hours ago	215MB	latest	343be86aab07	2
+
+$ sudo docker rmikbhat2376/ubuntu-2020-08-06:latest Untagged: kbhat2376/ubuntu-2020-08-06:latest Untagged: kbhat2376/ubuntu-2020-08- 06@sha256:8ca80f5b8d6ce56bb00d822859a13843e6c05ba6b2f0f9f026451462d6ce0e8e $ sudo docker images
+REPOSITORY		TAG	IMAGE ID CREATED	SIZE
+kbhat2376/ubuntu-2020-08-06-latest	latest	f225620c6fa1	About an hour ago	215MB
+===================================================================================
+============================================
+ 
+# docker rmi <image-id> - this will throw an error when we have image to bedeleted and this has dependency with child image.
+sudo docker rmi 343be86aab07
+
+Output:
+$ sudo docker rmi 343be86aab07
+Error response from daemon: conflict: unable to delete 343be86aab07 (cannotbe forced) - image has dependent child images
+===================================================================================
+===============================================
+
+# docker commit b4da9724f9fb debian-2020-08-05 - will save the containerwith latest set of installations, and save as new image.
+sudo docker commit b4da9724f9fb debian-2020-08-05
+
+Output:
+$ sudo docker commit b4da9724f9fbdebian-2020-08-05 sha256:d78dc99fd4b0ee19efc2ed8fc0ce823e3546ceb40e3be1d3bce33eb8253264a4 $ sudo docker images
+REPOSITORY
+SIZE	TAG	IMAGE ID	CREATED
+debian-2020-08-05	latest	d78dc99fd4b0	11 seconds ago
+114MB			
+debian-05-08-2020
+114MB	latest	cf3a1cd779e9	5 minutes ago
+debian	latest	ae8514941ea4	2 weeks ago
+114MB			
+
+$ sudo docker exec -it b4da9724f9fb77f809a735f8b03c57ab87f6f8acebfd3b3fe22282185a47dc9b bash root@b4da9724f9fb:/# ls
+bin	dev	home	lib	media	opt	root	sbin	sys	usr
+boot	etc	karthik	lib64	mnt	proc	run	srv	tmp	var
+root@b4da9724f9fb:/# cd karthik root@b4da9724f9fb:/karthik# ls k1.txt
+k2.txt
+root@b4da9724f9fb:/karthik# cat >> k1.txt fsdjfsdjsdfjk dsfsdjfkjds
+sdklsdklfsdkf sdsdjfdskjdf
+
+root@b4da9724f9fb:/karthik# cat k1.txt fsdjfsdjsdfjk dsfsdjfkjds
+sdklsdklfsdkf sdsdjfdskjdf
+root@b4da9724f9fb:/karthik# cat >> k2.txt Welcome to docker
+===================================================================================
+=============================================
+# docker login - will login to docker sudo docker login Output:
+Authenticating with existing credentials...
+Login did not succeed, error: Error response from daemon: Gethttps://registry- 1.docker.io/v2/: Get https://auth.docker.io/token?
+ 
+account=kbhat2376&client_id=docker&offline_token=true&service=registry.docker.io: net/http: request canceled (Client.Timeout exceeded while awaiting headers) (Client.Timeout exceeded while awaiting headers)
+Login with your Docker ID to push and pull images from Docker Hub. If youdon't have a Docker ID, head over to https://hub.docker.com to create one.
+
+Username (kbhat2376): kbhat2376 Password:myindia@2376
+
+Error response from daemon: Get https://registry-1.docker.io/v2/: net/http:request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+===================================================================================
+===================================================================================
+==========================
+
+# docker push <username>/<image-name> - will push the custom local image tothe docker hub sudo docker push kbhat2376/ubuntu-2020-08-06-latest
+
+Output:
+The push refers to repository[docker.io/kbhat2376/ubuntu-2020-08-06-latest] 7ae832ac16f7: Pushed 5b747ba07043: Mounted fromkbhat2376/ubuntu-2020-08-06 78c7a3b3d608:
+Mounted fromkbhat2376/ubuntu-2020-08-06 d387dc402e97: Mounted from kbhat2376/ubuntu-2020-08-06	095624243293:	Mounted	from kbhat2376/ubuntu-2020-08-06	a37e74863e72:	Mounted	from kbhat2376/ubuntu-2020-08-06	8eeb4a14bcb4:	Mounted	from kbhat2376/ubuntu-2020-08-06	ce3011290956:	Mounted	from kbhat2376/ubuntu-2020-08-06 latest: digest: sha256:1565b372bca309c22f44120683c25ea6ae2dda9c77826aa7035f2edd99a279ea size: 1989
+===================================================================================
+=============================================================================
+
+# docker volumes - bind mount, docker volumes
+# docker - using bind mount
+# syntax: sudo docker run -it <source-path>:<target-path> -d <image-name>
+sudo docker run -it -v /home/karthik/Dockerfile:/app -d kbhat2376/ubuntu_20120614
+
+# login to container
+# syntax: sudo docker exec -it <container-id> bash
+sudo dcoker exec -it 0a783089cf38 bash
+
+# go to cd /app
+ls -al
+# you should be able to see the files that are bind mount in host operating system
+
+
+# docker volumes - docker volumes
+# syntx: sudo docker run -it --mount source=<volume-name>,target=<target-path> -d <image-name>
+sudo docker run -it --mount source=v1,target=/app -d kbhat2376/ubuntu_20210614
+
+sudo docker ps -a
+sudo docker exec -it 0a783089cf38 bash
+
+# create docker volume-name
+syntax: sudo docker volume create <volume-name>
+sudo docker volume create v1
+'''
+Output:
+DRIVER    VOLUME NAME
+local     v1
+'''
+
+# listing docker volumes using ls
+syntax: sudo docker volume ls
+sudo docker volume ls
+'''
+Output:
+DRIVER    VOLUME NAME
+local     v1
+local     v2
+local     v3
+'''
+
+# inspect docker volume - detailed infomation of one or more volumes
+syntax: sudo docker volume inspect [v1 v2 v3 ...]
+sudo docker volume inspect v1 v2 v3
+'''
+Output:
+[
+    {
+        "CreatedAt": "2021-06-15T10:19:14+05:30",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/v1/_data",
+        "Name": "v1",
+        "Options": null,
+        "Scope": "local"
+    },
+    {
+        "CreatedAt": "2021-06-15T10:50:16+05:30",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/v2/_data",
+        "Name": "v2",
+        "Options": {},
+        "Scope": "local"
+    },
+    {
+        "CreatedAt": "2021-06-15T10:50:19+05:30",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/v3/_data",
+        "Name": "v3",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+'''
+
+# remove one or more volumes
+syntax: sudo docker volume rm [v1 v2 ...]
+sudo docker volume rm v2 v3
+'''
+Output:
+v2
+v3
+
+# prune all the volumes which are not connected to one or more containers
+syntax: sudo docker volume prune
+sudo docker volume prune
+'''
+Output:
+WARNING! This will remove all local volumes not used by at least one container.
+Are you sure you want to continue? [y/N] y
+Total reclaimed space: 0B
+'''
