@@ -439,6 +439,15 @@ Output:
 This node joined a swarm as a worker.
 '''
 
+# Manage join tokens
+sudo docker swarm join-token worker
+'''
+Output:
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-62m16ob6bsrwk39gyhfrnvrml9uyd0oqi5ihx4snppujvy413o-1br0974fcc16xxj5qdniuf8lz 18.222.223.181:2377
+'''
+
 # checking the swarm state -> Swarm Master node 
 sudo docker info
 '''
@@ -639,3 +648,4 @@ sudo docker node rm zy5gi33gew5qcgb4c2wsq4z8v
 Output:
 zy5gi33gew5qcgb4c2wsq4z8v
 '''
+
