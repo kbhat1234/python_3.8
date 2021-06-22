@@ -326,3 +326,316 @@ WARNING! This will remove all local volumes not used by at least one container.
 Are you sure you want to continue? [y/N] y
 Total reclaimed space: 0B
 '''
+
+#Docker compose
+#Installation of docker compose on docker container engine
+1. check first docker-compose installed in the container engine
+	docker-compose -v
+2. install curl is not installed
+	sudo apt-get install curl
+3. sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+4. sudo chmod +x /usr/local/bin/docker-compose
+5. sudo docker-compose --version
+'''
+Output:
+docker-compose version 1.29.2, build 5becea4c
+'''
+
+# create a docker-compose.yml file with all instructions to bring up service containers.
+nano docker-compose.yml
+
+# check the validity of the docker-compose file
+docker-compose config
+'''
+Output
+services:
+  mysqldb:
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_USER: wordpress
+    image: mysql:5.7
+    restart: always
+    volumes:
+    - mysql_data:/var/lib/mysql:rw
+  wordpress:
+    depends_on:
+      mysqldb:
+        condition: service_started
+    environment:
+      WORDPRESS_DB_HOST: mysqldb:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_USER: wordpress
+    image: wordpress:latest
+    ports:
+    - published: 8000
+      target: 80
+    restart: always
+    volumes:
+    - wordpress_data:/var/www/html:rw
+version: '3.9'
+volumes:
+  mysql_data: {}
+  wordpress_data: {}
+
+'''
+
+# start the docker-compose.yml using the command
+# normal serives up using command
+docker-compose up -d
+'''
+Output:
+Creating network "wordpress_project_default" with the default driver
+Creating wordpress_project_mysqldb_1 ... done
+Creating wordpress_project_wordpress_1 ... done
+'''
+
+# docker-compose up -d --scale <service-name>=<no.of replicas>
+docker-compose up -d --scale wordpress=2 --scale mysqldb=2
+'''
+Output:
+
+
+# stop all the services using docker-compose.yml
+docker-compose down
+'''
+Output:
+Stopping wordpress_project_wordpress_1 ... done
+Stopping wordpress_project_mysqldb_1   ... done
+Removing wordpress_project_wordpress_1 ... done
+Removing wordpress_project_mysqldb_1   ... done
+Removing network wordpress_project_default
+'''
+
+# docker swarm - Master/Leader node as swarm manager --> Manager
+syntax: sudo docker swarm init --advertise-addr <master ip-addr>
+sudo docker swarm init --advertise-addr 18.222.223.181
+'''
+Output:
+Swarm initialized: current node (ls25o2ejy2zja070ebb3gb2ea) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-1uonyltdkcny1suss7vez56q6ng85ji27o9njygqgduqsfulv4-8vn830bdnv0cffcakjq95wmhq 18.222.223.181:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+'''
+
+# docker swarm - join the worker1 node to the master node of swarm --> Worker1
+syntax: sudo docker join --token <token id from master>
+sudo docker join --token SWMTKN-1-1uonyltdkcny1suss7vez56q6ng85ji27o9njygqgduqsfulv4-8vn830bdnv0cffcakjq95wmhq 18.222.223.181:2377
+'''
+Output:
+This node joined a swarm as a worker.
+'''
+
+# docker swarm - join the worker2 node to the master node of swarm --> Worker2
+syntax: sudo docker join --token <token id from master>
+sudo docker join --token SWMTKN-1-1uonyltdkcny1suss7vez56q6ng85ji27o9njygqgduqsfulv4-8vn830bdnv0cffcakjq95wmhq 18.222.223.181:2377
+'''
+Output:
+This node joined a swarm as a worker.
+'''
+
+# checking the swarm state -> Swarm Master node 
+sudo docker info
+'''
+Output:
+Client:
+ Context:    default
+ Debug Mode: false
+
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 0
+ Server Version: 20.10.2
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Native Overlay Diff: true
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 1
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: active
+  NodeID: ls25o2ejy2zja070ebb3gb2ea
+  Is Manager: true
+  ClusterID: reucnfzydlorpny4bgbkz8gix
+  Managers: 1
+  Nodes: 3
+  Default Address Pool: 10.0.0.0/8
+  SubnetSize: 24
+  Data Path Port: 4789
+  Orchestration:
+   Task History Retention Limit: 5
+  Raft:
+   Snapshot Interval: 10000
+   Number of Old Snapshots to Retain: 0
+   Heartbeat Tick: 1
+   Election Tick: 10
+  Dispatcher:
+   Heartbeat Period: 5 seconds
+  CA Configuration:
+   Expiry Duration: 3 months
+   Force Rotate: 0
+  Autolock Managers: false
+  Root Rotation In Progress: false
+  Node Address: 18.222.223.181
+  Manager Addresses:
+   18.222.223.181:2377
+ Runtimes: io.containerd.runc.v2 io.containerd.runtime.v1.linux runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version:
+ runc version:
+ init version:
+ Security Options:
+  apparmor
+  seccomp
+   Profile: default
+ Kernel Version: 5.4.0-1045-aws
+ Operating System: Ubuntu 20.04.2 LTS
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 1
+ Total Memory: 978.6MiB
+ Name: ip-172-31-20-8
+ ID: KUHA:ZUVD:NWVZ:TDLM:72X2:WT5D:5NBN:BFR6:J4TN:2AJV:TZTR:BD67
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Username: kbhat2376
+ Registry: https://index.docker.io/v1/
+ Labels:
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+WARNING: No swap limit support
+WARNING: No blkio weight support
+WARNING: No blkio weight_device support
+'''
+
+# Checking the swarm state --> Worker node
+sudo docker info
+'''
+Output:
+Client:
+ Context:    default
+ Debug Mode: false
+
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 0
+ Server Version: 20.10.2
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Native Overlay Diff: true
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 1
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: active
+  NodeID: tbokl87ukov9pnod9dbn3k1ac
+  Is Manager: false
+  Node Address: 172.31.16.16
+  Manager Addresses:
+   18.222.223.181:2377
+ Runtimes: io.containerd.runc.v2 io.containerd.runtime.v1.linux runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version:
+ runc version:
+ init version:
+ Security Options:
+  apparmor
+  seccomp
+   Profile: default
+ Kernel Version: 5.4.0-1045-aws
+ Operating System: Ubuntu 20.04.2 LTS
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 1
+ Total Memory: 978.6MiB
+ Name: ip-172-31-16-16
+ ID: S7UE:WXX7:CFCJ:CBY2:6XZR:VUKX:QWVS:M7HS:U7HR:MBKM:HPDI:TF76
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Registry: https://index.docker.io/v1/
+ Labels:
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+WARNING: No swap limit support
+WARNING: No blkio weight support
+WARNING: No blkio weight_device support
+'''
+
+# Display the nodes attached to swarm master
+sudo docker node ls
+'''
+Output:
+ID                            HOSTNAME           STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+tbokl87ukov9pnod9dbn3k1ac     ip-172-31-16-16    Ready     Active                          20.10.2
+w0hykb1bv6zfqoop0z5d2cbrp     ip-172-31-19-156   Ready     Active                          20.10.2
+ls25o2ejy2zja070ebb3gb2ea *   ip-172-31-20-8     Ready     Active         Leader           20.10.2
+'''
+
+# Exiting the swarm - master node
+sudo docker swarm leave 
+or 
+sudo docker swarm leave --force
+'''
+Output:
+Node left the swarm.
+'''
+
+# Exiting the swarm - worker node 
+sudo docker swarm leave
+or 
+sudo docker swarm leave --force
+'''
+Output:
+Node left the swarm
+'''
+
+# swarm manager - display nodes
+sudo docker node ls
+'''
+Output:
+ID                            HOSTNAME           STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+zy5gi33gew5qcgb4c2wsq4z8v     ip-172-31-16-16    Down      Active                          20.10.2
+fd6navub4juvvx50r828aofz1     ip-172-31-19-156   Down      Active                          20.10.2
+on0h86tdm51njy1rqnmubmtmt *   ip-172-31-20-8     Ready     Active         Leader           20.10.2
+'''
+
+# Removing a node from swarm manager
+syntax: sudo docker node rm <node-id>
+or sudo docker node rm -f <node-id>
+sudo docker node rm 
+
+# removing the node from manager - swarm manager
+syntax: sudo docker node rm <node-id>
+or sudo docker node rm -f <node-id>
+sudo docker node rm zy5gi33gew5qcgb4c2wsq4z8v
+'''
+Output:
+zy5gi33gew5qcgb4c2wsq4z8v
+'''
