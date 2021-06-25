@@ -917,7 +917,7 @@ fudj1oogjy7a   redis-new      replicated   2/2        redis:3.0.7
 '''
 
 # Draining nodes - this situation can occur if some of the nodes went to maintainence, so all tasks would be moved between worker and manager nodes
-syntax: sudo docker node update --availability <drain/active> <node-id>
+syntax: sudo docker node update --availability <drain/active/pause> <node-id>
 
 
 # worker2 tasks before drain 
@@ -937,6 +937,10 @@ sudo docker node update --availability drain 0ug1i4e09p2oczdbj7usakzwo
 Output:
 0ug1i4e09p2oczdbj7usakzwo
 '''
+
+sudo docker node update --availability pause 0ug1i4e09p2oczdbj7usakzwo
+
+sudo docker node update --availability active 0ug1i4e09p2oczdbj7usakzwo
 
 # check the tasks of worker2 node after drain, tasks would be shared or moved between worker1 and manager
 sudo docker ps
