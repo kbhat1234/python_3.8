@@ -5,6 +5,12 @@ Output:
 git version 2.26.0.windows.1
 '''
 
+git version
+'''
+Output:
+git version 2.33.1.windows.1
+'''
+
 #git help [command to get help for]
 git help --all
 
